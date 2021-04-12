@@ -3,7 +3,7 @@ This code is for BFE change predictions.
 ******
 ## File description
 There are two folder after extracted. 
-* `bin`
+* **bin**
     * jackal.dir
     * jackal_64bit
     * mibpb5
@@ -12,18 +12,21 @@ There are two folder after extracted.
     * PPIstructure
     * profix
     * scap
-    * `SPIDER2_local`
-* `7NDB`
-    * `features`
-        * `7NDB_B_A_344_S`
+    * **SPIDER2_local**
+* **7NDB**
+    * **features**
+        * **7NDB_B_A_344_S**
             * 7NDB.pdb
-* `dataset`
+* **dataset**
     * 
-* `models`
+* **models**
     * ANN_model.pkl (trained ANN machine learning model)
     * normalizer.pkl (normalizer for ANN machine learning model)
     * GBDT_model.pkl
-* `training`
+* **predicting**
+    * 7NBD_B_A_344_S.npy
+    * prediction_ANN
+    * prediction_GBDT.py
 
 **Important!!!** The program `PPIprepare` and `PPIstructure` will copy the file from `"../../../bin/"`. Thus, the folder path, such as `7NDB/features/7NDB_B_A_344_S` shouldn't be changed and users should run `PPIprepare` and `PPIfeature` under the folder `7NDB/features/7NDB_B_A_344_S/`.
 
@@ -58,5 +61,15 @@ Now, users can generate the feature as:
 
 A file named `7NDB_B_A_344_S.npy` stores the features for 7NDB_B_A_344_S.
 
+## Predicting
+In `predicting` folder, there are three files, where `7NDB_B_A_344_S.npy` is the features of PDB 7NDB with a mutation on Chain B, A344S, `prediction_ANN` and `prediction_GBDT.py` are prediction files.
+`prediction_ANN` is an executable file which requires a GPU integrated system. `prediction_GBDT.py` can be run on any system.
 
+To run `prediction_ANN`:
+
+`./prediction_ANN --predict_data 7NDB_B_A_344_S.npy`
+
+To run `prediction_GBDT.py`:
+
+`python prediction_GBDT.py`
 ## Datasets
