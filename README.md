@@ -1,5 +1,5 @@
 # Machine learning model for binding free energy (BFE) change predictions
-This code is for BFE change predictions of monoclonal antibodies binding to SARS-CoV-2 Spike protein. The zip file can be download from `https://`
+This code is for BFE change predictions of monoclonal antibodies binding to SARS-CoV-2 Spike protein. The zip file can be download from `https://weilab.math.msu.edu/TopNetmAb.tar.gz`
 ******
 ## File description
 There are five folders after extracted. 
